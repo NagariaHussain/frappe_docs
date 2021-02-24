@@ -117,11 +117,15 @@ apt install git python-dev redis-server
 
 ```bash
 apt-get install software-properties-common
+# Not to be ran for Ubuntu 20.04
 apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+# Not to be ran for Ubuntu 20.04
 add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ftp.ubuntu-tw.org/mirror/mariadb/repo/10.3/ubuntu xenial main'
 apt-get update
 apt-get install mariadb-server-10.3
 ```
+
+> MariaDB 10.3 is already present in the default repository of Ubuntu 20.04. If the above repository is added to Ubuntu 20.04, it will cause a conflict while installing MariaDB.
 
 During this installation you'll be prompted to set the MySQL root password. If you are not prompted, you'll have to initialize the MySQL server setup yourself. You can do that by running the command:
 
